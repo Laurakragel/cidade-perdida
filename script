@@ -1,0 +1,42 @@
+const avanca = document.querySelectorAll('.btn-proximo');
+const voltarButton = document.createElement('button');
+const historico = [];
+
+voltarButton.innerText = 'Voltar';
+voltarButton.classList.add('btn-voltar');
+document.body.appendChild(voltarButton);
+voltarButton.style.display = 'none'; // Ocultar inicialmente
+
+avanca.forEach(button => {
+    button.addEventListener('click', function() {
+        const atual = document.querySelector('.ativo');
+        const proximoPasso = 'passo-' + this.getAttribute('data-proximo');
+
+        // Armazenar o passo atual no histórico
+        historico.push(atual.id);
+        
+        // Mudar para o próximo passo
+        atual.classList.remove('ativo');
+        document.getElementById(proximoPasso).classList.add('ativo');
+
+        // Mostrar botão de voltar
+        voltarButton.style.display = 'inline-block';
+    });
+});
+
+// Função para voltar ao passo anterior
+voltarButton.addEventListener('click', function() {
+    if (historico.length > 0) {
+        const atual = document.querySelector('.ativo');
+        const passoAnterior = historico.pop(); // Retira o último passo do histórico
+
+        // Mudar para o passo anterior
+        atual.classList.remove('ativo');
+        document.getElementById(passoAnterior).classList.add('ativo');
+
+        // Ocultar botão de voltar se já estiver no primeiro passo
+        if (historico.length === 0) {
+            voltarButton.style.display = 'none';
+        }
+    }
+});
