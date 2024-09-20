@@ -1,0 +1,56 @@
+body {
+    background-color: #1D4221;
+    color: white;
+    font-family: "Bai Jamjuree", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajuste para ocupar toda a altura da tela */
+    margin: 0;
+    padding: 20px; /* Adiciona um pouco de espaçamento */
+}
+
+button {
+    background-color: #64A712;
+    color: white;
+    font-family: "Bai Jamjuree", sans-serif;
+    border: none; /* Remove bordas do botão */
+    border-radius: 5px; /* Arredonda os cantos do botão */
+    padding: 10px 15px; /* Aumenta o espaço interno do botão */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    transition: background-color 0.3s; /* Transição suave ao mudar a cor */
+}
+
+button:hover {
+    background-color: #4F8A0C; /* Cor ao passar o mouse */
+}
+
+.passo {
+    display: none;
+}
+
+.passo.ativo {
+    display: block;
+}
+
+main {
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+img {
+    max-width: 90%;
+    border-radius: 10px; /* Arredonda as bordas das imagens */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra às imagens */
+}
+
+/* Estilos para o botão de voltar */
+.btn-voltar {
+    background-color: #C74C00; /* Cor diferente para o botão de voltar */
+    margin-top: 15px; /* Espaço acima do botão */
+}
+
+.btn-voltar:hover {
+    background-color: #A33D00; /* Cor ao passar o mouse no botão de voltar */
+}
